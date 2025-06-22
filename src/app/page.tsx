@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="container mx-auto px-4 py-12 md:py-20">
-      <section className="text-center">
+      <section className="flex flex-col items-center justify-center text-center min-h-[70vh]">
         <h1 className="font-headline text-5xl md:text-7xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-400 mb-4">
           Welcome to YashVerse
         </h1>
