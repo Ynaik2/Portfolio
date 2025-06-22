@@ -1,6 +1,6 @@
 import { ContactForm } from "@/components/contact-form";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Instagram, Ghost } from "lucide-react";
 import Link from "next/link";
 
 export default function ContactPage() {
@@ -36,8 +36,14 @@ export default function ContactPage() {
             </Button>
             <Button asChild variant="outline" className="w-full justify-start text-lg p-6">
               <Link href="#" target="_blank" rel="noopener noreferrer">
-                <Twitter className="mr-4 h-6 w-6" />
-                Twitter / X
+                <Instagram className="mr-4 h-6 w-6" />
+                Instagram
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="w-full justify-start text-lg p-6">
+              <Link href="#" target="_blank" rel="noopener noreferrer">
+                <Ghost className="mr-4 h-6 w-6" />
+                Snapchat
               </Link>
             </Button>
           </div>
