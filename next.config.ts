@@ -5,7 +5,7 @@ const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
 const repo = 'YashVerse';
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  ...(isGithubActions && {output: 'export'}),
   // Configure basePath and assetPrefix for GitHub Pages
   basePath: isGithubActions ? `/${repo}` : '',
   assetPrefix: isGithubActions ? `/${repo}/` : '',
