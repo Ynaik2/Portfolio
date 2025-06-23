@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code, Cpu, ArrowRight } from "lucide-react";
+import { Code, Cpu, ArrowRight, Shield } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -11,8 +11,7 @@ export default function Home() {
           Welcome to YashVerse
         </h1>
         <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground mb-8">
-          A digital space where I, Yash, share my journey through code,
-          creativity, and personal growth.
+          Curious, creative, and always leveling up — I’m Yash, a teen who blends tech, wit, and real talk.
         </p>
         <div className="flex justify-center gap-4">
           <Button asChild size="lg">
@@ -63,7 +62,7 @@ export default function Home() {
           <Card className="text-center hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
               <div className="mx-auto bg-primary/10 rounded-full p-3 w-fit">
-                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                 <Shield className="h-8 w-8 text-primary" />
               </div>
               <CardTitle className="font-headline text-2xl mt-4">
                 Core Value
