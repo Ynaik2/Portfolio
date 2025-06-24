@@ -59,7 +59,7 @@ export default function ProjectCard({ title, description, imageUrl, imageHint, t
       </Card>
 
       <DialogContent className="max-w-3xl p-0">
-        <DialogHeader className="p-6 pb-0">
+        <DialogHeader className="p-6 pb-4">
           <DialogTitle className="font-headline text-3xl mb-2">{title}</DialogTitle>
            <DialogDescription asChild>
             <div className="flex flex-wrap gap-2">
@@ -69,8 +69,8 @@ export default function ProjectCard({ title, description, imageUrl, imageHint, t
             </div>
           </DialogDescription>
         </DialogHeader>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
-            <div className="relative h-64 md:h-auto rounded-md overflow-hidden">
+        <div>
+            <div className="relative w-full aspect-[3/2]">
                 <Image
                     src={imageUrl}
                     alt={title}
@@ -79,9 +79,9 @@ export default function ProjectCard({ title, description, imageUrl, imageHint, t
                     className="object-cover"
                 />
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="p-6 space-y-4">
                 <p className="text-muted-foreground">{details}</p>
-                <Button asChild className="mt-auto">
+                <Button asChild>
                     <Link href={projectUrl} target="_blank" rel="noopener noreferrer">
                         View Live Project <ExternalLink className="ml-2 h-4 w-4" />
                     </Link>
