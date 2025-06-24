@@ -30,7 +30,7 @@ export default function ContactPage() {
           </p>
           <div className="space-y-4">
             <Button asChild variant="outline" className="w-full justify-start text-lg p-6">
-              <Link href="#" target="_blank" rel="noopener noreferrer">
+              <Link href="https://github.com/Ynaik2" target="_blank" rel="noopener noreferrer">
                 <Github className="mr-4 h-6 w-6" />
                 GitHub
               </Link>
