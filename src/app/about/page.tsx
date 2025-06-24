@@ -41,16 +41,7 @@ export default function AboutPage() {
 
         <Card className="overflow-hidden shadow-lg transition-all duration-300 hover:shadow-primary/20">
           <div className="grid md:grid-cols-2">
-            <div className="relative h-64 md:h-full md:order-2">
-              <Image
-                src="https://placehold.co/600x400.png"
-                alt="A robotics project in progress"
-                data-ai-hint="robotics workbench"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="p-8 flex flex-col justify-center md:order-1">
+            <div className="p-8 flex flex-col justify-center md:order-2">
               <CardHeader>
                 <CardTitle className="font-headline text-3xl">The Robotics Adventure</CardTitle>
                 <CardDescription className="text-md">Bringing code to life.</CardDescription>
@@ -60,6 +51,15 @@ export default function AboutPage() {
                   My journey into robotics was a game-changer. It was the perfect fusion of software and hardware, where my code could physically interact with the world. Building my first line-following robot, troubleshooting sensor issues, and celebrating its first successful run was an unforgettable experience. It taught me persistence and the magic of seeing tangible results from digital instructions.
                 </p>
               </CardContent>
+            </div>
+            <div className="relative h-64 md:h-full md:order-1">
+              <Image
+                src="https://placehold.co/600x400.png"
+                alt="A robotics project in progress"
+                data-ai-hint="robotics workbench"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </Card>
