@@ -16,7 +16,16 @@ export default function AboutPage() {
       <div className="space-y-16">
         <Card className="overflow-hidden shadow-lg transition-all duration-300 hover:shadow-primary/20">
           <div className="grid md:grid-cols-2">
-            <div className="p-8 flex flex-col justify-center">
+            <div className="relative h-64 md:h-full md:order-2">
+              <Image
+                src="https://placehold.co/600x400.png"
+                alt="Abstract representation of first code"
+                data-ai-hint="code terminal"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="p-8 flex flex-col justify-center md:order-1">
               <CardHeader>
                 <CardTitle className="font-headline text-3xl">The First Spark</CardTitle>
                 <CardDescription className="text-md">Where it all began...</CardDescription>
@@ -27,21 +36,21 @@ export default function AboutPage() {
                 </p>
               </CardContent>
             </div>
-            <div className="relative h-64 md:h-full">
-              <Image
-                src="https://placehold.co/600x400.png"
-                alt="Abstract representation of first code"
-                data-ai-hint="code terminal"
-                fill
-                className="object-cover"
-              />
-            </div>
           </div>
         </Card>
 
         <Card className="overflow-hidden shadow-lg transition-all duration-300 hover:shadow-primary/20">
           <div className="grid md:grid-cols-2">
-            <div className="p-8 flex flex-col justify-center md:order-2">
+            <div className="relative h-64 md:h-full">
+              <Image
+                src="https://placehold.co/600x400.png"
+                alt="A robotics project in progress"
+                data-ai-hint="robotics workbench"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="p-8 flex flex-col justify-center">
               <CardHeader>
                 <CardTitle className="font-headline text-3xl">The Robotics Adventure</CardTitle>
                 <CardDescription className="text-md">Bringing code to life.</CardDescription>
@@ -52,21 +61,21 @@ export default function AboutPage() {
                 </p>
               </CardContent>
             </div>
-            <div className="relative h-64 md:h-full md:order-1">
-              <Image
-                src="https://placehold.co/600x400.png"
-                alt="A robotics project in progress"
-                data-ai-hint="robotics workbench"
-                fill
-                className="object-cover"
-              />
-            </div>
           </div>
         </Card>
 
         <Card className="overflow-hidden shadow-lg transition-all duration-300 hover:shadow-primary/20">
           <div className="grid md:grid-cols-2">
-            <div className="p-8 flex flex-col justify-center">
+            <div className="relative h-64 md:h-full md:order-2">
+              <Image
+                src="https://placehold.co/600x400.png"
+                alt="A person thinking and planning"
+                data-ai-hint="whiteboard ideas"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="p-8 flex flex-col justify-center md:order-1">
               <CardHeader>
                 <CardTitle className="font-headline text-3xl">My Philosophy</CardTitle>
                 <CardDescription className="text-md">What drives me forward.</CardDescription>
@@ -76,15 +85,6 @@ export default function AboutPage() {
                   I believe in the power of continuous learning and creative problem-solving. Technology is a tool, and its true potential is unlocked when applied with empathy and a desire to make a positive impact. I strive to build things that are not only functional and efficient but also elegant and user-friendly. Every project is a new opportunity to learn, grow, and contribute.
                 </p>
               </CardContent>
-            </div>
-            <div className="relative h-64 md:h-full">
-              <Image
-                src="https://placehold.co/600x400.png"
-                alt="A person thinking and planning"
-                data-ai-hint="whiteboard ideas"
-                fill
-                className="object-cover"
-              />
             </div>
           </div>
         </Card>
