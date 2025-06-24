@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -10,6 +11,8 @@ import {
   SheetContent,
   SheetTrigger,
   SheetClose,
+  SheetHeader,
+  SheetTitle,
 } from "@/components/ui/sheet";
 
 const navLinks = [
@@ -54,26 +57,34 @@ export default function Header() {
                 <span className="sr-only">Open Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right">
-                <div className="p-6 pt-12">
-                    <nav className="flex flex-col gap-4">
-                    {navLinks.map((link) => (
-                        <SheetClose asChild key={link.href}>
-                        <Link
-                            href={link.href}
-                            className={cn(
-                            "text-lg font-medium transition-colors hover:text-primary",
-                            pathname === link.href
-                                ? "text-primary"
-                                : "text-muted-foreground"
-                            )}
-                        >
-                            {link.label}
-                        </Link>
-                        </SheetClose>
-                    ))}
-                    </nav>
-                </div>
+            <SheetContent side="right" className="p-0">
+              <SheetHeader className="border-b p-6">
+                <SheetTitle>
+                  <Link href="/" className="flex items-center gap-2">
+                    <Code className="h-6 w-6 text-primary" />
+                    <span className="font-headline text-xl font-bold">YashVerse</span>
+                  </Link>
+                </SheetTitle>
+              </SheetHeader>
+              <div className="p-6">
+                <nav className="flex flex-col gap-4">
+                  {navLinks.map((link) => (
+                    <SheetClose asChild key={link.href}>
+                      <Link
+                        href={link.href}
+                        className={cn(
+                          "text-lg font-medium transition-colors hover:text-primary",
+                          pathname === link.href
+                            ? "text-primary"
+                            : "text-muted-foreground"
+                        )}
+                      >
+                        {link.label}
+                      </Link>
+                    </SheetClose>
+                  ))}
+                </nav>
+              </div>
             </SheetContent>
           </Sheet>
         </div>
@@ -81,3 +92,4 @@ export default function Header() {
     </header>
   );
 }
+    
