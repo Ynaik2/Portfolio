@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpen, FlaskConical, GraduationCap } from "lucide-react";
+import Link from "next/link";
 
 export default function AcademicPage() {
   return (
@@ -29,12 +30,22 @@ export default function AcademicPage() {
           <CardContent className="space-y-4 pl-8 border-l-2 border-primary ml-10">
               <div>
                 <h3 className="font-bold text-xl">M.S. in Computer Science</h3>
-                <p className="text-muted-foreground">Stanford University, 2022-2024</p>
+                <p className="text-muted-foreground">
+                  <Link href="https://www.stanford.edu/" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-primary transition-colors">
+                    Stanford University
+                  </Link>
+                  , 2022-2024
+                </p>
                 <p className="mt-1">Specialization in Artificial Intelligence. Thesis on generative models for code synthesis.</p>
               </div>
                <div>
                 <h3 className="font-bold text-xl">B.S. in Software Engineering</h3>
-                <p className="text-muted-foreground">University of Waterloo, 2018-2022</p>
+                <p className="text-muted-foreground">
+                   <Link href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-primary transition-colors">
+                    University of Waterloo
+                  </Link>
+                  , 2018-2022
+                </p>
                 <p className="mt-1">Graduated with Distinction, Dean's List. Co-op experience at major tech companies.</p>
               </div>
           </CardContent>
