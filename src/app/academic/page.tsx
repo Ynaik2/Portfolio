@@ -104,14 +104,22 @@ export default function AcademicPage() {
               </div>
             </div>
           </CardHeader>
-          <CardContent className="space-y-6">
-            {publications.map((pub, index) => (
-              <div className="pl-4" key={index}>
-                <h4 className="font-semibold text-lg">{pub.title}</h4>
-                <p className="text-sm text-muted-foreground">{pub.conference}</p>
-                <p className="mt-2">{pub.authorsAndSummary}</p>
+          <CardContent>
+            {publications.length > 0 ? (
+              <div className="space-y-6">
+                {publications.map((pub, index) => (
+                  <div className="pl-4" key={index}>
+                    <h4 className="font-semibold text-lg">{pub.title}</h4>
+                    <p className="text-sm text-muted-foreground">{pub.conference}</p>
+                    <p className="mt-2">{pub.authorsAndSummary}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+            ) : (
+              <div className="text-center text-muted-foreground italic py-4">
+                <p>Working on some new papers. Check back soon!</p>
+              </div>
+            )}
           </CardContent>
         </Card>
 
