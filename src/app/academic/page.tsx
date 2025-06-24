@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpen, FlaskConical, GraduationCap } from "lucide-react";
+import { BookOpen, ExternalLink, FlaskConical, GraduationCap } from "lucide-react";
 import Link from "next/link";
 
 export default function AcademicPage() {
@@ -31,8 +31,9 @@ export default function AcademicPage() {
               <div>
                 <h3 className="font-bold text-xl">M.S. in Computer Science</h3>
                 <p className="text-muted-foreground">
-                  <Link href="https://www.stanford.edu/" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-primary transition-colors">
+                  <Link href="https://www.stanford.edu/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 group hover:underline hover:text-primary transition-colors">
                     Stanford University
+                    <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                   , 2022-2024
                 </p>
@@ -41,8 +42,9 @@ export default function AcademicPage() {
                <div>
                 <h3 className="font-bold text-xl">B.S. in Software Engineering</h3>
                 <p className="text-muted-foreground">
-                   <Link href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-primary transition-colors">
+                   <Link href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 group hover:underline hover:text-primary transition-colors">
                     University of Waterloo
+                    <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                   , 2018-2022
                 </p>
