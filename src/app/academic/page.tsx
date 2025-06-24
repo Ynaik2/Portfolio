@@ -17,25 +17,18 @@ const educationHistory = [
     years: "2018-2022",
     description: "Graduated with Distinction, Dean's List. Co-op experience at major tech companies.",
   },
-  {
-    degree: "B.S. in Software Engineering",
-    university: "University of Waterlo",
-    universityUrl: "https://uwaterloo.ca/",
-    years: "2018-2022",
-    description: "Graduated with Distinction, Dean's List. Co-op experience at major tech companies.",
-  },
 ];
 
 const publications = [
   {
-    title: '"Generative Code Synthesis: A New Frontier"',
-    conference: "Conference on Neural Information Processing Systems (NeurIPS), 2023",
-    authorsAndSummary: "Yash, et al. - This paper explores novel transformer architectures for generating syntactically correct and semantically meaningful code.",
+    title: "Generative Models for Code Synthesis and Autocompletion",
+    conference: "Proceedings of the 45th International Conference on Software Engineering (ICSE 2024)",
+    authorsAndSummary: "Yash N., et al. - This paper introduces a novel approach to code generation using a fine-tuned large language model, significantly improving accuracy in context-aware autocompletion tasks.",
   },
   {
-    title: '"Efficient Indexing for Large-Scale Code Repositories"',
-    conference: "ACM SIGMOD Conference on Management of Data, 2022",
-    authorsAndSummary: "Yash, et al. - We propose a new data structure that significantly speeds up semantic search in codebases exceeding billions of lines.",
+    title: "Low-Latency Real-Time Communication with WebSockets",
+    conference: "The Web Conference 2023 (WWW '23)",
+    authorsAndSummary: "Yash N., et al. - An exploration of architectural patterns for minimizing latency in collaborative web applications, presenting a case study on a real-time whiteboard.",
   },
 ];
 
