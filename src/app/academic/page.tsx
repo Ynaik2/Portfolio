@@ -31,9 +31,11 @@ export default function AcademicPage() {
               <div>
                 <h3 className="font-bold text-xl">M.S. in Computer Science</h3>
                 <p className="text-muted-foreground">
-                  <Link href="https://www.stanford.edu/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 group hover:underline hover:text-primary transition-colors">
+                  <Link href="https://www.stanford.edu/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center group hover:underline hover:text-primary transition-colors">
                     Stanford University
-                    <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span className="inline-block w-0 group-hover:w-5 transition-[width] duration-300 ease-in-out overflow-hidden">
+                      <ExternalLink className="h-4 w-4 ml-1" />
+                    </span>
                   </Link>
                   , 2022-2024
                 </p>
@@ -42,9 +44,11 @@ export default function AcademicPage() {
                <div>
                 <h3 className="font-bold text-xl">B.S. in Software Engineering</h3>
                 <p className="text-muted-foreground">
-                   <Link href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 group hover:underline hover:text-primary transition-colors">
+                   <Link href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center group hover:underline hover:text-primary transition-colors">
                     University of Waterloo
-                    <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span className="inline-block w-0 group-hover:w-5 transition-[width] duration-300 ease-in-out overflow-hidden">
+                      <ExternalLink className="h-4 w-4 ml-1" />
+                    </span>
                   </Link>
                   , 2018-2022
                 </p>
