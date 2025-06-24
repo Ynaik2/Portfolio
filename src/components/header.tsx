@@ -2,8 +2,15 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Code } from "lucide-react";
+import { Code, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -38,7 +45,38 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        {/* Mobile menu could be added here */}
+
+        <div className="md:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Open Menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right">
+                <div className="p-6 pt-12">
+                    <nav className="flex flex-col gap-4">
+                    {navLinks.map((link) => (
+                        <SheetClose asChild key={link.href}>
+                        <Link
+                            href={link.href}
+                            className={cn(
+                            "text-lg font-medium transition-colors hover:text-primary",
+                            pathname === link.href
+                                ? "text-primary"
+                                : "text-muted-foreground"
+                            )}
+                        >
+                            {link.label}
+                        </Link>
+                        </SheetClose>
+                    ))}
+                    </nav>
+                </div>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </header>
   );
