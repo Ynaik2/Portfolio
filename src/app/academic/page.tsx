@@ -2,6 +2,52 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { BookOpen, ExternalLink, FlaskConical, GraduationCap } from "lucide-react";
 import Link from "next/link";
 
+const educationHistory = [
+  {
+    degree: "M.S. in Computer Science",
+    university: "Stanford University",
+    universityUrl: "https://www.stanford.edu/",
+    years: "2022-2024",
+    description: "Specialization in Artificial Intelligence. Thesis on generative models for code synthesis.",
+  },
+  {
+    degree: "B.S. in Software Engineering",
+    university: "University of Waterloo",
+    universityUrl: "https://uwaterloo.ca/",
+    years: "2018-2022",
+    description: "Graduated with Distinction, Dean's List. Co-op experience at major tech companies.",
+  },
+  {
+    degree: "B.S. in Software Engineering",
+    university: "University of Waterlo",
+    universityUrl: "https://uwaterloo.ca/",
+    years: "2018-2022",
+    description: "Graduated with Distinction, Dean's List. Co-op experience at major tech companies.",
+  },
+];
+
+const publications = [
+  {
+    title: '"Generative Code Synthesis: A New Frontier"',
+    conference: "Conference on Neural Information Processing Systems (NeurIPS), 2023",
+    authorsAndSummary: "Yash, et al. - This paper explores novel transformer architectures for generating syntactically correct and semantically meaningful code.",
+  },
+  {
+    title: '"Efficient Indexing for Large-Scale Code Repositories"',
+    conference: "ACM SIGMOD Conference on Management of Data, 2022",
+    authorsAndSummary: "Yash, et al. - We propose a new data structure that significantly speeds up semantic search in codebases exceeding billions of lines.",
+  },
+];
+
+const researchInterests = [
+  "Large Language Models (LLMs) and their application in software engineering.",
+  "Generative AI for creative content and code generation.",
+  "Efficient algorithms for big data processing and analysis.",
+  "Human-computer interaction, especially in the context of developer tools.",
+  "The ethics and societal impact of artificial intelligence.",
+];
+
+
 export default function AcademicPage() {
   return (
     <div className="container mx-auto px-4 py-12 md:py-20">
@@ -28,32 +74,21 @@ export default function AcademicPage() {
             </div>
           </CardHeader>
           <CardContent className="space-y-4 pl-8 border-l-2 border-primary ml-10">
-              <div>
-                <h3 className="font-bold text-xl">M.S. in Computer Science</h3>
-                <p className="text-muted-foreground">
-                  <Link href="https://www.stanford.edu/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center group hover:underline hover:text-primary transition-colors">
-                    Stanford University
-                    <span className="inline-block w-0 group-hover:w-5 transition-[width] duration-300 ease-in-out overflow-hidden">
-                      <ExternalLink className="h-4 w-4 ml-1" />
-                    </span>
-                  </Link>
-                  , 2022-2024
-                </p>
-                <p className="mt-1">Specialization in Artificial Intelligence. Thesis on generative models for code synthesis.</p>
-              </div>
-               <div>
-                <h3 className="font-bold text-xl">B.S. in Software Engineering</h3>
-                <p className="text-muted-foreground">
-                   <Link href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center group hover:underline hover:text-primary transition-colors">
-                    University of Waterloo
-                    <span className="inline-block w-0 group-hover:w-5 transition-[width] duration-300 ease-in-out overflow-hidden">
-                      <ExternalLink className="h-4 w-4 ml-1" />
-                    </span>
-                  </Link>
-                  , 2018-2022
-                </p>
-                <p className="mt-1">Graduated with Distinction, Dean's List. Co-op experience at major tech companies.</p>
-              </div>
+              {educationHistory.map((edu, index) => (
+                <div key={index}>
+                  <h3 className="font-bold text-xl">{edu.degree}</h3>
+                  <p className="text-muted-foreground">
+                    <Link href={edu.universityUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center group hover:underline hover:text-primary transition-colors">
+                      {edu.university}
+                      <span className="inline-block w-0 group-hover:w-5 transition-[width] duration-300 ease-in-out overflow-hidden">
+                        <ExternalLink className="h-4 w-4 ml-1" />
+                      </span>
+                    </Link>
+                    , {edu.years}
+                  </p>
+                  <p className="mt-1">{edu.description}</p>
+                </div>
+              ))}
           </CardContent>
         </Card>
 
@@ -70,16 +105,13 @@ export default function AcademicPage() {
             </div>
           </CardHeader>
           <CardContent className="space-y-6">
-            <div className="pl-4">
-              <h4 className="font-semibold text-lg">"Generative Code Synthesis: A New Frontier"</h4>
-              <p className="text-sm text-muted-foreground">Conference on Neural Information Processing Systems (NeurIPS), 2023</p>
-              <p className="mt-2">Yash, et al. - This paper explores novel transformer architectures for generating syntactically correct and semantically meaningful code.</p>
-            </div>
-             <div className="pl-4">
-              <h4 className="font-semibold text-lg">"Efficient Indexing for Large-Scale Code Repositories"</h4>
-              <p className="text-sm text-muted-foreground">ACM SIGMOD Conference on Management of Data, 2022</p>
-              <p className="mt-2">Yash, et al. - We propose a new data structure that significantly speeds up semantic search in codebases exceeding billions of lines.</p>
-            </div>
+            {publications.map((pub, index) => (
+              <div className="pl-4" key={index}>
+                <h4 className="font-semibold text-lg">{pub.title}</h4>
+                <p className="text-sm text-muted-foreground">{pub.conference}</p>
+                <p className="mt-2">{pub.authorsAndSummary}</p>
+              </div>
+            ))}
           </CardContent>
         </Card>
 
@@ -97,11 +129,9 @@ export default function AcademicPage() {
           </CardHeader>
           <CardContent>
             <ul className="list-disc list-inside space-y-3 text-muted-foreground">
-              <li>Large Language Models (LLMs) and their application in software engineering.</li>
-              <li>Generative AI for creative content and code generation.</li>
-              <li>Efficient algorithms for big data processing and analysis.</li>
-              <li>Human-computer interaction, especially in the context of developer tools.</li>
-              <li>The ethics and societal impact of artificial intelligence.</li>
+              {researchInterests.map((interest, index) => (
+                <li key={index}>{interest}</li>
+              ))}
             </ul>
           </CardContent>
         </Card>
