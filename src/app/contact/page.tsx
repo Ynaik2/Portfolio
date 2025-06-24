@@ -1,3 +1,4 @@
+
 "use client";
 
 import { ContactForm } from "@/components/contact-form";
@@ -18,6 +19,10 @@ export default function ContactPage() {
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+        <div className="md:order-1">
+          <ContactForm />
+        </div>
+
         <div className="md:order-2">
           <h2 className="font-headline text-2xl font-bold mb-4">Connect on Social Media</h2>
           <p className="text-muted-foreground mb-6">
@@ -49,10 +54,6 @@ export default function ContactPage() {
               </Link>
             </Button>
           </div>
-        </div>
-
-        <div className="md:order-1">
-          <ContactForm />
         </div>
       </div>
     </div>
