@@ -1,3 +1,5 @@
+"use client";
+
 import { ContactForm } from "@/components/contact-form";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Instagram, Ghost } from "lucide-react";
