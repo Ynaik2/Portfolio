@@ -41,4 +41,7 @@ pnpm-debug.log*
 
 # VSCode settings except for the shared settings file
 .vscode/*
-!.vscode/settings.json
+
+
+.docs
+.idx
