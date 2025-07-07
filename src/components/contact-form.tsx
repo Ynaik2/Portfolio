@@ -35,7 +35,7 @@ const formSchema = z.object({
 export function ContactForm() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const accessKey = "ae0ad4eb-cdea-4a41-8c5e-88d48daf4951";
+  const accessKey = "ae0ad4eb-cdea-4a41-8c5e-88d48daf4951"; // this is not an api key
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
