@@ -9,7 +9,6 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -61,13 +60,11 @@ export default function ProjectCard({ title, description, imageUrl, imageHint, t
       <DialogContent className="max-w-3xl p-0">
         <DialogHeader className="p-6 pb-4">
           <DialogTitle className="font-headline text-3xl mb-2">{title}</DialogTitle>
-           <DialogDescription asChild>
-            <div className="flex flex-wrap gap-2">
+           <div className="flex flex-wrap gap-2">
               {tags.map((tag) => (
                 <Badge key={tag} variant="secondary">{tag}</Badge>
               ))}
             </div>
-          </DialogDescription>
         </DialogHeader>
         <div>
             <div className="relative w-full aspect-[3/2]">

@@ -20,7 +20,7 @@ const educationHistory = [
 ];
 
 const publications = [
-  {
+  /*{
     title: "Generative Models for Code Synthesis and Autocompletion",
     conference: "Proceedings of the 45th International Conference on Software Engineering (ICSE 2024)",
     authorsAndSummary: "Yash N., et al. - This paper introduces a novel approach to code generation using a fine-tuned large language model, significantly improving accuracy in context-aware autocompletion tasks.",
@@ -29,7 +29,7 @@ const publications = [
     title: "Low-Latency Real-Time Communication with WebSockets",
     conference: "The Web Conference 2023 (WWW '23)",
     authorsAndSummary: "Yash N., et al. - An exploration of architectural patterns for minimizing latency in collaborative web applications, presenting a case study on a real-time whiteboard.",
-  },
+  },*/
 ];
 
 const researchInterests = [
