@@ -2,7 +2,7 @@ import type {NextConfig} from 'next';
 
 const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
 
-const repo = 'YashVerse';
+const repo = 'Portfolio';
 
 const nextConfig: NextConfig = {
   ...(isGithubActions && {output: 'export'}),
