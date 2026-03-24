@@ -1,6 +1,12 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpen, ExternalLink, FlaskConical, GraduationCap } from "lucide-react";
+import { BookOpen, ExternalLink, FlaskConical, GraduationCap, ChevronDown } from "lucide-react";
 import Link from "next/link";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const educationHistory = [
   {
@@ -17,10 +23,24 @@ const educationHistory = [
     years: "2018-2022",
     description: "Graduated with Distinction, Dean's List. Co-op experience at major tech companies.",
   },
+  {
+    degree: "High School Diploma",
+    university: "St. Xavier's High School",
+    universityUrl: "#",
+    years: "2014-2018",
+    description: "Valedictorian, President of the Robotics Club. Focused on advanced mathematics and physics.",
+  },
+  {
+    degree: "Professional Certificate in Data Science",
+    university: "Harvard University (Online)",
+    universityUrl: "https://pll.harvard.edu/subject/data-science",
+    years: "2021",
+    description: "Comprehensive program covering data visualization, probability, inference, and modeling.",
+  },
 ];
 
 const publications = [
-  /*{
+  {
     title: "Generative Models for Code Synthesis and Autocompletion",
     conference: "Proceedings of the 45th International Conference on Software Engineering (ICSE 2024)",
     authorsAndSummary: "Yash N., et al. - This paper introduces a novel approach to code generation using a fine-tuned large language model, significantly improving accuracy in context-aware autocompletion tasks.",
@@ -29,7 +49,7 @@ const publications = [
     title: "Low-Latency Real-Time Communication with WebSockets",
     conference: "The Web Conference 2023 (WWW '23)",
     authorsAndSummary: "Yash N., et al. - An exploration of architectural patterns for minimizing latency in collaborative web applications, presenting a case study on a real-time whiteboard.",
-  },*/
+  },
 ];
 
 const researchInterests = [
@@ -42,6 +62,9 @@ const researchInterests = [
 
 
 export default function AcademicPage() {
+  const mainEducation = educationHistory.slice(0, 2);
+  const additionalEducation = educationHistory.slice(2);
+
   return (
     <div className="container mx-auto px-4 py-12 md:py-20">
       <header className="text-center mb-12">
@@ -66,22 +89,51 @@ export default function AcademicPage() {
               </div>
             </div>
           </CardHeader>
-          <CardContent className="space-y-4 pl-8 border-l-2 border-primary ml-10">
-              {educationHistory.map((edu, index) => (
-                <div key={index}>
-                  <h3 className="font-bold text-xl">{edu.degree}</h3>
-                  <p className="text-muted-foreground">
-                    <Link href={edu.universityUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center group hover:underline hover:text-primary transition-colors">
-                      {edu.university}
-                      <span className="inline-block w-0 group-hover:w-5 transition-[width] duration-300 ease-in-out overflow-hidden">
-                        <ExternalLink className="h-4 w-4 ml-1" />
-                      </span>
-                    </Link>
-                    , {edu.years}
-                  </p>
-                  <p className="mt-1">{edu.description}</p>
-                </div>
-              ))}
+          <CardContent className="space-y-6 pl-8 border-l-2 border-primary ml-10">
+              <div className="space-y-8">
+                {mainEducation.map((edu, index) => (
+                  <div key={index}>
+                    <h3 className="font-bold text-xl">{edu.degree}</h3>
+                    <p className="text-muted-foreground">
+                      <Link href={edu.universityUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center group hover:underline hover:text-primary transition-colors">
+                        {edu.university}
+                        <span className="inline-block w-0 group-hover:w-5 transition-[width] duration-300 ease-in-out overflow-hidden">
+                          <ExternalLink className="h-4 w-4 ml-1" />
+                        </span>
+                      </Link>
+                      , {edu.years}
+                    </p>
+                    <p className="mt-1">{edu.description}</p>
+                  </div>
+                ))}
+              </div>
+
+              {additionalEducation.length > 0 && (
+                <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="additional-edu" className="border-none">
+                    <AccordionTrigger className="hover:no-underline py-2 text-primary font-semibold">
+                      Show More Education
+                    </AccordionTrigger>
+                    <AccordionContent className="space-y-8 pt-4 pb-2">
+                      {additionalEducation.map((edu, index) => (
+                        <div key={index}>
+                          <h3 className="font-bold text-xl">{edu.degree}</h3>
+                          <p className="text-muted-foreground">
+                            <Link href={edu.universityUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center group hover:underline hover:text-primary transition-colors">
+                              {edu.university}
+                              <span className="inline-block w-0 group-hover:w-5 transition-[width] duration-300 ease-in-out overflow-hidden">
+                                <ExternalLink className="h-4 w-4 ml-1" />
+                              </span>
+                            </Link>
+                            , {edu.years}
+                          </p>
+                          <p className="mt-1">{edu.description}</p>
+                        </div>
+                      ))}
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              )}
           </CardContent>
         </Card>
 

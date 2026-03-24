@@ -78,11 +78,13 @@ export default function ProjectCard({ title, description, imageUrl, imageHint, t
             </div>
             <div className="p-6 space-y-4">
                 <p className="text-muted-foreground">{details}</p>
-                <Button asChild>
-                    <Link href={projectUrl} target="_blank" rel="noopener noreferrer">
+                {projectUrl && (
+                    <Button asChild>
+                      <Link href={projectUrl} target="_blank" rel="noopener noreferrer">
                         View Live Project <ExternalLink className="ml-2 h-4 w-4" />
-                    </Link>
-                </Button>
+                      </Link>
+                    </Button>
+                  )}
             </div>
         </div>
       </DialogContent>
