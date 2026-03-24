@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpen, ExternalLink, FlaskConical, GraduationCap, ChevronDown } from "lucide-react";
+import { BookOpen, ExternalLink, FlaskConical, GraduationCap } from "lucide-react";
 import Link from "next/link";
 import {
   Accordion,
@@ -47,9 +47,9 @@ const publications = [
     authorsAndSummary: "Yash N., et al. - This paper introduces a novel approach to code generation using a fine-tuned large language model, significantly improving accuracy in context-aware autocompletion tasks.",
   },
   {
-    title: "Low-Latency Real-Time Communication with WebSockets",
-    conference: "The Web Conference 2023 (WWW '23)",
-    authorsAndSummary: "Yash N., et al. - An exploration of architectural patterns for minimizing latency in collaborative web applications, presenting a case study on a real-time whiteboard.",
+    title: "Privacy-Preserving AI in Healthcare",
+    conference: "Journal of Artificial Intelligence Research (2023)",
+    authorsAndSummary: "Yash N., Smith J. - A study on differential privacy techniques applied to federated learning models in medical diagnostics.",
   },
 ];
 
@@ -66,6 +66,9 @@ export default function AcademicPage() {
   const mainEducation = educationHistory.slice(0, 2);
   const additionalEducation = educationHistory.slice(2);
 
+  const visibleInterests = researchInterests.slice(0, 2);
+  const hiddenInterests = researchInterests.slice(2);
+
   return (
     <div className="container mx-auto px-4 py-12 md:py-20">
       <header className="text-center mb-12">
@@ -77,9 +80,9 @@ export default function AcademicPage() {
         </p>
       </header>
 
-      <div className="space-y-12">
-        <Card className="shadow-lg transition-all duration-300 hover:shadow-primary/20 group">
-          <CardHeader>
+      <div className="space-y-8">
+        <Card className="shadow-lg transition-all duration-300 hover:shadow-primary/20 group relative overflow-visible">
+          <CardHeader className="pb-4">
             <div className="flex items-center gap-4">
               <div className="bg-primary/10 p-3 rounded-full">
                 <GraduationCap className="h-8 w-8 text-primary" />
@@ -90,7 +93,7 @@ export default function AcademicPage() {
               </div>
             </div>
           </CardHeader>
-          <CardContent className="relative space-y-6 pl-8 border-l-2 border-primary ml-10 pb-4">
+          <CardContent className="relative space-y-4 pl-8 border-l-2 border-primary ml-10 pb-4">
               <div className="space-y-6">
                 {mainEducation.map((edu, index) => (
                   <div key={index}>
@@ -114,7 +117,7 @@ export default function AcademicPage() {
                   <AccordionItem value="additional-edu" className="border-none">
                     <AccordionTrigger 
                       className={cn(
-                        "absolute -left-[1px] bottom-0 translate-x-[-50%] translate-y-[50%]",
+                        "absolute -left-[1px] bottom-4 translate-x-[-50%]",
                         "flex h-8 w-8 items-center justify-center rounded-full border-2 border-primary bg-background p-0",
                         "opacity-0 transition-opacity duration-300 group-hover:opacity-100",
                         "hover:no-underline hover:bg-primary/10 focus:outline-none",
@@ -162,10 +165,10 @@ export default function AcademicPage() {
             {publications.length > 0 ? (
               <div className="space-y-6">
                 {publications.map((pub, index) => (
-                  <div className="pl-4" key={index}>
+                  <div className="pl-4 border-l-2 border-muted" key={index}>
                     <h4 className="font-semibold text-lg">{pub.title}</h4>
                     <p className="text-sm text-muted-foreground">{pub.conference}</p>
-                    <p className="mt-2">{pub.authorsAndSummary}</p>
+                    <p className="mt-2 text-muted-foreground">{pub.authorsAndSummary}</p>
                   </div>
                 ))}
               </div>
@@ -177,7 +180,7 @@ export default function AcademicPage() {
           </CardContent>
         </Card>
 
-        <Card className="shadow-lg transition-all duration-300 hover:shadow-primary/20">
+        <Card className="shadow-lg transition-all duration-300 hover:shadow-primary/20 group overflow-hidden">
           <CardHeader>
              <div className="flex items-center gap-4">
               <div className="bg-primary/10 p-3 rounded-full">
@@ -191,10 +194,24 @@ export default function AcademicPage() {
           </CardHeader>
           <CardContent>
             <ul className="list-disc list-inside space-y-3 text-muted-foreground">
-              {researchInterests.map((interest, index) => (
+              {visibleInterests.map((interest, index) => (
                 <li key={index}>{interest}</li>
               ))}
             </ul>
+            
+            <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out group-hover:grid-rows-[1fr]">
+              <div className="overflow-hidden">
+                <ul className="list-disc list-inside space-y-3 text-muted-foreground pt-3 border-t border-muted mt-3">
+                  {hiddenInterests.map((interest, index) => (
+                    <li key={index + 2}>{interest}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            
+            <div className="mt-4 text-xs text-primary/60 font-medium group-hover:opacity-0 transition-opacity">
+              Hover to see more interests...
+            </div>
           </CardContent>
         </Card>
       </div>
