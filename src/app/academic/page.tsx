@@ -90,8 +90,8 @@ export default function AcademicPage() {
               </div>
             </div>
           </CardHeader>
-          <CardContent className="relative space-y-6 pl-8 border-l-2 border-primary ml-10 pb-10">
-              <div className="space-y-8">
+          <CardContent className="relative space-y-6 pl-8 border-l-2 border-primary ml-10 pb-4">
+              <div className="space-y-6">
                 {mainEducation.map((edu, index) => (
                   <div key={index}>
                     <h3 className="font-bold text-xl">{edu.degree}</h3>
@@ -123,7 +123,7 @@ export default function AcademicPage() {
                     >
                       <span className="sr-only">Toggle additional education</span>
                     </AccordionTrigger>
-                    <AccordionContent className="space-y-8 pt-8 pb-2">
+                    <AccordionContent className="space-y-6 pt-6 pb-2">
                       {additionalEducation.map((edu, index) => (
                         <div key={index}>
                           <h3 className="font-bold text-xl">{edu.degree}</h3>
