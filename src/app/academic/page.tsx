@@ -7,6 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { cn } from "@/lib/utils";
 
 const educationHistory = [
   {
@@ -77,7 +78,7 @@ export default function AcademicPage() {
       </header>
 
       <div className="space-y-12">
-        <Card className="shadow-lg transition-all duration-300 hover:shadow-primary/20">
+        <Card className="shadow-lg transition-all duration-300 hover:shadow-primary/20 group">
           <CardHeader>
             <div className="flex items-center gap-4">
               <div className="bg-primary/10 p-3 rounded-full">
@@ -89,15 +90,15 @@ export default function AcademicPage() {
               </div>
             </div>
           </CardHeader>
-          <CardContent className="space-y-6 pl-8 border-l-2 border-primary ml-10">
+          <CardContent className="relative space-y-6 pl-8 border-l-2 border-primary ml-10 pb-10">
               <div className="space-y-8">
                 {mainEducation.map((edu, index) => (
                   <div key={index}>
                     <h3 className="font-bold text-xl">{edu.degree}</h3>
                     <p className="text-muted-foreground">
-                      <Link href={edu.universityUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center group hover:underline hover:text-primary transition-colors">
+                      <Link href={edu.universityUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center group/link hover:underline hover:text-primary transition-colors">
                         {edu.university}
-                        <span className="inline-block w-0 group-hover:w-5 transition-[width] duration-300 ease-in-out overflow-hidden">
+                        <span className="inline-block w-0 group-hover/link:w-5 transition-[width] duration-300 ease-in-out overflow-hidden">
                           <ExternalLink className="h-4 w-4 ml-1" />
                         </span>
                       </Link>
@@ -111,17 +112,25 @@ export default function AcademicPage() {
               {additionalEducation.length > 0 && (
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="additional-edu" className="border-none">
-                    <AccordionTrigger className="hover:no-underline py-2 text-primary font-semibold">
-                      Show More Education
+                    <AccordionTrigger 
+                      className={cn(
+                        "absolute -left-[1px] bottom-0 translate-x-[-50%] translate-y-[50%]",
+                        "flex h-8 w-8 items-center justify-center rounded-full border-2 border-primary bg-background p-0",
+                        "opacity-0 transition-opacity duration-300 group-hover:opacity-100",
+                        "hover:no-underline hover:bg-primary/10 focus:outline-none",
+                        "[&[data-state=open]>svg]:rotate-180 [&>svg]:h-5 [&>svg]:w-5 [&>svg]:text-primary"
+                      )}
+                    >
+                      <span className="sr-only">Toggle additional education</span>
                     </AccordionTrigger>
-                    <AccordionContent className="space-y-8 pt-4 pb-2">
+                    <AccordionContent className="space-y-8 pt-8 pb-2">
                       {additionalEducation.map((edu, index) => (
                         <div key={index}>
                           <h3 className="font-bold text-xl">{edu.degree}</h3>
                           <p className="text-muted-foreground">
-                            <Link href={edu.universityUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center group hover:underline hover:text-primary transition-colors">
+                            <Link href={edu.universityUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center group/link hover:underline hover:text-primary transition-colors">
                               {edu.university}
-                              <span className="inline-block w-0 group-hover:w-5 transition-[width] duration-300 ease-in-out overflow-hidden">
+                              <span className="inline-block w-0 group-hover/link:w-5 transition-[width] duration-300 ease-in-out overflow-hidden">
                                 <ExternalLink className="h-4 w-4 ml-1" />
                               </span>
                             </Link>
