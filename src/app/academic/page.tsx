@@ -93,7 +93,7 @@ export default function AcademicPage() {
               </div>
             </div>
           </CardHeader>
-          <CardContent className="relative space-y-4 pl-8 border-l-2 border-primary ml-10 pb-2">
+          <CardContent className="relative space-y-4 pl-8 border-l-2 border-primary ml-10 pb-4">
               <div className="space-y-6">
                 {mainEducation.map((edu, index) => (
                   <div key={index}>
@@ -117,7 +117,7 @@ export default function AcademicPage() {
                   <AccordionItem value="additional-edu" className="border-none">
                     <AccordionTrigger 
                       className={cn(
-                        "absolute -left-[1px] bottom-2 translate-x-[-50%]",
+                        "absolute -left-[1px] bottom-4 translate-x-[-50%]",
                         "flex h-8 w-8 items-center justify-center rounded-full border-2 border-primary bg-background p-0",
                         "opacity-0 transition-opacity duration-300 group-hover:opacity-100",
                         "[&[data-state=open]>svg]:rotate-180 [&>svg]:h-5 [&>svg]:w-5 [&>svg]:text-primary"
@@ -191,7 +191,7 @@ export default function AcademicPage() {
               </div>
             </div>
           </CardHeader>
-          <CardContent className="pb-2">
+          <CardContent className="pb-4">
             <ul className="list-disc list-inside space-y-2 text-muted-foreground">
               {visibleInterests.map((interest, index) => (
                 <li key={index} className="text-sm">{interest}</li>
