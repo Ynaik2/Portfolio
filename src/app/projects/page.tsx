@@ -6,7 +6,7 @@ const projects = [
   {
     title: "Automated Water Filtering system",
     description: "A hardware-software solution for clean water processing using Arduino and sensors.",
-    media: placeholders.projects.water,
+    media: placeholders.projects.lnksprj1, //check placeholder-imges.json for image paths
     tags: ["Arduino", "C++", "Electronics", "Hardware"],
     projectUrl: "",
     details: "This project features a real-time monitoring system that controls filtration based on water quality sensors. The dashboard displays turbidity and pH levels, ensuring safe output."
@@ -14,7 +14,7 @@ const projects = [
   {
     title: "Real-time Collaborative Whiteboard",
     description: "An interactive whiteboard application allowing multiple users to draw together in real-time.",
-    media: placeholders.projects.whiteboard,
+    media: placeholders.projects.lnksprj2, //check placeholder-imges.json for image paths
     tags: ["Next.js", "WebSockets", "TypeScript"],
     projectUrl: "#",
     details: "Built with Next.js and TypeScript, this application uses WebSockets to enable low-latency communication. Users can draw, write, and add shapes simultaneously."
@@ -22,7 +22,7 @@ const projects = [
   {
     title: "Home Automation System with Raspberry Pi",
     description: "A custom system to control lights and appliances remotely using a Raspberry Pi.",
-    media: placeholders.projects.home,
+    media: placeholders.projects.lnksprj3, //check placeholder-imges.json for image paths
     tags: ["Python", "IoT", "Flask", "Hardware"],
     projectUrl: "#",
     details: "This IoT project combines hardware and software to create a smart home hub. A Flask server on a Raspberry Pi controls various relays for lights and monitoring."
@@ -30,7 +30,7 @@ const projects = [
   {
     title: "E-commerce Platform for Local Artisans",
     description: "A full-featured e-commerce site to help local artists sell their creations online.",
-    media: placeholders.projects.ecommerce,
+    media: placeholders.projects.lnksprj4, //check placeholder-imges.json for image paths
     tags: ["Vue.js", "Firebase", "Stripe"],
     projectUrl: "#",
     details: "Provides a platform for local artists to showcase work. Built on Vue.js with Firebase for storage and Stripe for secure payments."
@@ -38,7 +38,7 @@ const projects = [
   {
     title: "Mobile App for Language Learning",
     description: "A gamified mobile app that makes learning a new language fun and interactive.",
-    media: placeholders.projects.language,
+    media: placeholders.projects.lnksprj5, //check placeholder-imges.json for image paths
     tags: ["React Native", "Gamification", "UI/UX"],
     projectUrl: "#",
     details: "A gamified mobile app developed with React Native. It features interactive quizzes, flashcards, and progress-tracking challenges."
@@ -46,7 +46,7 @@ const projects = [
   {
     title: "Data Visualization of Climate Change",
     description: "An interactive dashboard that visualizes global climate data trends.",
-    media: placeholders.projects.climate,
+    media: placeholders.projects.lnksprj6, //check placeholder-imges.json for image paths
     tags: ["D3.js", "Data Science", "API"],
     projectUrl: "#",
     details: "Built with D3.js to visualize complex climate data. Animated charts and maps illustrate temperature trends and CO2 levels over decades."
