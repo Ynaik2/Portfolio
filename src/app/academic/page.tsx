@@ -80,7 +80,7 @@ export default function AcademicPage() {
         </p>
       </header>
 
-      <div className="space-y-8">
+      <div className="space-y-8 max-w-4xl mx-auto">
         <Card className="shadow-lg transition-all duration-300 hover:shadow-primary/20 group relative overflow-visible">
           <CardHeader className="pb-4">
             <div className="flex items-center gap-4">
@@ -93,12 +93,12 @@ export default function AcademicPage() {
               </div>
             </div>
           </CardHeader>
-          <CardContent className="relative space-y-4 pl-8 border-l-2 border-primary ml-10 pb-4">
+          <CardContent className="relative space-y-4 pl-8 border-l-2 border-primary ml-10 pb-2">
               <div className="space-y-6">
                 {mainEducation.map((edu, index) => (
                   <div key={index}>
                     <h3 className="font-bold text-xl">{edu.degree}</h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-muted-foreground text-sm">
                       <Link href={edu.universityUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center group/link hover:underline hover:text-primary transition-colors">
                         {edu.university}
                         <span className="inline-block w-0 group-hover/link:w-5 transition-[width] duration-300 ease-in-out overflow-hidden">
@@ -107,7 +107,7 @@ export default function AcademicPage() {
                       </Link>
                       , {edu.years}
                     </p>
-                    <p className="mt-1">{edu.description}</p>
+                    <p className="mt-1 text-sm">{edu.description}</p>
                   </div>
                 ))}
               </div>
@@ -117,10 +117,9 @@ export default function AcademicPage() {
                   <AccordionItem value="additional-edu" className="border-none">
                     <AccordionTrigger 
                       className={cn(
-                        "absolute -left-[1px] bottom-4 translate-x-[-50%]",
+                        "absolute -left-[1px] bottom-2 translate-x-[-50%]",
                         "flex h-8 w-8 items-center justify-center rounded-full border-2 border-primary bg-background p-0",
                         "opacity-0 transition-opacity duration-300 group-hover:opacity-100",
-                        "hover:no-underline hover:bg-primary/10 focus:outline-none",
                         "[&[data-state=open]>svg]:rotate-180 [&>svg]:h-5 [&>svg]:w-5 [&>svg]:text-primary"
                       )}
                     >
@@ -130,7 +129,7 @@ export default function AcademicPage() {
                       {additionalEducation.map((edu, index) => (
                         <div key={index}>
                           <h3 className="font-bold text-xl">{edu.degree}</h3>
-                          <p className="text-muted-foreground">
+                          <p className="text-muted-foreground text-sm">
                             <Link href={edu.universityUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center group/link hover:underline hover:text-primary transition-colors">
                               {edu.university}
                               <span className="inline-block w-0 group-hover/link:w-5 transition-[width] duration-300 ease-in-out overflow-hidden">
@@ -139,7 +138,7 @@ export default function AcademicPage() {
                             </Link>
                             , {edu.years}
                           </p>
-                          <p className="mt-1">{edu.description}</p>
+                          <p className="mt-1 text-sm">{edu.description}</p>
                         </div>
                       ))}
                     </AccordionContent>
@@ -161,14 +160,14 @@ export default function AcademicPage() {
               </div>
             </div>
           </CardHeader>
-          <CardContent>
+          <CardContent className="pb-6">
             {publications.length > 0 ? (
               <div className="space-y-6">
                 {publications.map((pub, index) => (
                   <div className="pl-4 border-l-2 border-muted" key={index}>
                     <h4 className="font-semibold text-lg">{pub.title}</h4>
-                    <p className="text-sm text-muted-foreground">{pub.conference}</p>
-                    <p className="mt-2 text-muted-foreground">{pub.authorsAndSummary}</p>
+                    <p className="text-xs text-muted-foreground">{pub.conference}</p>
+                    <p className="mt-2 text-sm text-muted-foreground">{pub.authorsAndSummary}</p>
                   </div>
                 ))}
               </div>
@@ -192,24 +191,24 @@ export default function AcademicPage() {
               </div>
             </div>
           </CardHeader>
-          <CardContent>
-            <ul className="list-disc list-inside space-y-3 text-muted-foreground">
+          <CardContent className="pb-2">
+            <ul className="list-disc list-inside space-y-2 text-muted-foreground">
               {visibleInterests.map((interest, index) => (
-                <li key={index}>{interest}</li>
+                <li key={index} className="text-sm">{interest}</li>
               ))}
             </ul>
             
             <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out group-hover:grid-rows-[1fr]">
               <div className="overflow-hidden">
-                <ul className="list-disc list-inside space-y-3 text-muted-foreground pt-3 border-t border-muted mt-3">
+                <ul className="list-disc list-inside space-y-2 text-muted-foreground pt-2">
                   {hiddenInterests.map((interest, index) => (
-                    <li key={index + 2}>{interest}</li>
+                    <li key={index + 2} className="text-sm">{interest}</li>
                   ))}
                 </ul>
               </div>
             </div>
             
-            <div className="mt-4 text-xs text-primary/60 font-medium group-hover:opacity-0 transition-opacity">
+            <div className="mt-2 text-[10px] text-primary/60 font-medium group-hover:opacity-0 group-hover:h-0 group-hover:mt-0 transition-all duration-300 overflow-hidden uppercase tracking-wider">
               Hover to see more interests...
             </div>
           </CardContent>
