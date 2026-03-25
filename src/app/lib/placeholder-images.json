@@ -1,0 +1,41 @@
+
+{
+  "about": {
+    "spark": [
+      { "type": "image", "url": "https://picsum.photos/seed/spark1/800/600", "hint": "code terminal" },
+      { "type": "video", "url": "https://www.w3schools.com/html/mov_bbb.mp4", "hint": "demo video" },
+      { "type": "image", "url": "https://picsum.photos/seed/spark2/800/600", "hint": "retro computer" }
+    ],
+    "robotics": [
+      { "type": "image", "url": "https://picsum.photos/seed/robot1/800/600", "hint": "robotics workbench" },
+      { "type": "image", "url": "https://picsum.photos/seed/robot2/800/600", "hint": "circuit board" }
+    ],
+    "philosophy": [
+      { "type": "image", "url": "https://picsum.photos/seed/phil1/800/600", "hint": "whiteboard ideas" },
+      { "type": "image", "url": "https://picsum.photos/seed/phil2/800/600", "hint": "creative space" }
+    ]
+  },
+  "projects": {
+    "water": [
+      { "type": "image", "url": "https://picsum.photos/seed/water1/800/600", "hint": "water filter" },
+      { "type": "video", "url": "https://www.w3schools.com/html/movie.mp4", "hint": "system test" }
+    ],
+    "whiteboard": [
+      { "type": "image", "url": "https://picsum.photos/seed/white1/800/600", "hint": "collaboration app" },
+      { "type": "image", "url": "https://picsum.photos/seed/white2/800/600", "hint": "realtime code" }
+    ],
+    "home": [
+      { "type": "image", "url": "https://picsum.photos/seed/home1/800/600", "hint": "raspberry pi" },
+      { "type": "image", "url": "https://picsum.photos/seed/home2/800/600", "hint": "smart home" }
+    ],
+    "ecommerce": [
+      { "type": "image", "url": "https://picsum.photos/seed/shop1/800/600", "hint": "online store" }
+    ],
+    "language": [
+      { "type": "image", "url": "https://picsum.photos/seed/lang1/800/600", "hint": "mobile app" }
+    ],
+    "climate": [
+      { "type": "image", "url": "https://picsum.photos/seed/data1/800/600", "hint": "data charts" }
+    ]
+  }
+}
