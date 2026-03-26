@@ -17,7 +17,10 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'YashVerse',
-  description: 'The personal portfolio of Yashas.'
+  description: 'The personal portfolio of Yashas.',
+  icons: {
+    icon: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/favicon.png`,
+  },
 };
 
 export default function RootLayout({
