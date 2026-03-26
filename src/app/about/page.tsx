@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
+import Image from "@/components/Appimage";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import aboutData from "@/user_data/about.json";
 
