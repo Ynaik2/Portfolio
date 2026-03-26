@@ -16,6 +16,8 @@ import { cn } from "@/lib/utils";
 import Image from "@/components/Appimage";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import aboutData from "@/user_data/about.json";
+import AppVideo from "@/components/Appvideo";
+
 
 interface MediaItem {
   type: string;
@@ -44,7 +46,7 @@ function StoryDialogContent({ story }: { story: typeof stories[0] }) {
     <DialogContent className="max-w-2xl p-0 overflow-hidden">
       <div className="relative w-full aspect-video bg-muted group">
         {currentMedia.type === "video" ? (
-          <video
+          <AppVideo
             src={currentMedia.url}
             controls
             className="w-full h-full object-contain"

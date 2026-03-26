@@ -16,6 +16,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
+import AppVideo from "@/components/Appvideo";
 
 interface MediaItem {
   type: string;
@@ -92,7 +93,7 @@ export default function ProjectCard({ title, description, media, tags, projectUr
         <div>
             <div className="relative w-full aspect-[3/2] bg-muted group">
                 {currentMedia.type === "video" ? (
-                  <video
+                  <AppVideo
                     src={currentMedia.url}
                     controls
                     className="w-full h-full object-cover"
