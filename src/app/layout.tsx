@@ -17,7 +17,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'YashVerse',
-  description: 'The personal portfolio of Yash.',
+  description: 'The personal portfolio of Yashas.',
   icons: {
     icon: '/favicon.jpg',
   },

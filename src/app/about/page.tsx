@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import placeholders from "@/app/lib/placeholder-images.json";
+import aboutData from "@/user_data/about.json";
 
 interface MediaItem {
   type: string;
@@ -23,35 +23,7 @@ interface MediaItem {
   hint: string;
 }
 
-const stories = [
-  {
-    title: "The First Spark",
-    description: "Where it all began...",
-    media: placeholders.about.spark,
-    imageAlt: "Abstract representation of first code",
-    layout: "imageRight",
-    content: "I still remember the thrill of seeing \"Hello, World!\" appear on the screen. It wasn't just text; it was a realization that I could create something from nothing, just by writing lines of code.",
-    popupContent: "That first 'Hello, World!' was written in Python. I was captivited by the potential of logic. I quickly moved from simple console outputs to creating small games and scripts to automate my daily tasks. This initial spark taught me that with logic and persistence, I could build tools to solve real problems."
-  },
-  {
-    title: "The Robotics Adventure",
-    description: "Bringing code to life.",
-    media: placeholders.about.robotics,
-    imageAlt: "A robotics project in progress",
-    layout: "imageLeft",
-    content: "My journey into robotics was a game-changer. It was the perfect fusion of software and hardware, where my code could physically interact with the world.",
-    popupContent: "Built on an Arduino platform, using infrared sensors to detect a black line. The real challenge was writing a PID control algorithm to make its movements smooth. The moment it perfectly navigated the course was a profound lesson in control systems."
-  },
-  {
-    title: "My Philosophy",
-    description: "What drives me forward.",
-    media: placeholders.about.philosophy,
-    imageAlt: "A person thinking and planning",
-    layout: "imageRight",
-    content: "I believe in the power of continuous learning and creative problem-solving. Technology is a tool, and its true potential is unlocked when applied with empathy.",
-    popupContent: "I don't just ask 'Can we build it?' but 'Should we build it?'. For me, a successful project isn't just one that's technically impressive; it's one that is accessible, intuitive, and genuinely helpful."
-  },
-];
+const { stories } = aboutData;
 
 function StoryDialogContent({ story }: { story: typeof stories[0] }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -75,7 +47,7 @@ function StoryDialogContent({ story }: { story: typeof stories[0] }) {
           <video
             src={currentMedia.url}
             controls
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
           />
         ) : (
           <Image
@@ -83,7 +55,7 @@ function StoryDialogContent({ story }: { story: typeof stories[0] }) {
             alt={story.imageAlt}
             data-ai-hint={currentMedia.hint}
             fill
-            className="object-cover"
+            className="object-contain"
           />
         )}
         
@@ -159,6 +131,7 @@ export default function AboutPage() {
                       data-ai-hint={story.media[0].hint}
                       fill
                       className="object-cover"
+                      priority={index === 0}
                     />
                   </div>
                   <div className={cn("p-8 flex flex-col justify-center", story.layout === 'imageRight' ? 'md:order-1' : '')}>
